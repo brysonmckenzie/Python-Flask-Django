@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wall</title>
+</head>
+    <body>
+        <form action="/logout" method="post">{% csrf_token %}
+        <button>Log Out</button>
+        </form>
+        
+<h2>Welcome {{ name.first_name }}!</h2>
+        
+        <h1>Post a Message</h1>
+
+        <form action="/process" method="post">
+            {% csrf_token %}
+            <textarea name="message" cols="150" rows="5" style="font-size:14px;"></textarea><br>
+            <button>Post a message</button>
+        </form><br><br>
+
+<h2>Wall Post</h2>
+
+        {% for m in message %} 
+            <h3 style="color:blue;">{{ m.message }}</h3>
+            <p style="color:red;">-{{m.user.first_name}}&nbsp;{{m.user.last_name}}</p>
+            <p style="color:red;">{{ m.created_at }}</p>
+
+        <form action="/process2/{{m.id}}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="message_id" value="{{ m.id }}">
+            <textarea name="comment" cols="140" rows="2"></textarea><br>
+            <button>Comment</button>
+        </form><br>
+        <h6 style="color:purple;">comments</h6>
+                {% for comment in comments %} 
+                
+        
+                    {% if comment.message_id == m.id %}
+
+<p>-{{comment.user.first_name}}&nbsp;{{comment.user.last_name}}&nbsp;&nbsp;&nbsp;&nbsp;{{ comment.user.created_at }}</p> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ comment.comment }} 
+
+                    {% endif %}
+        {% endfor %}
+    {% endfor %}
+    </body>
+</html>

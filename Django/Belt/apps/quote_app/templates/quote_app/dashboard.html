@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/styledb.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="border"></div>
+        <div id="logout">
+            <h1>Welcome!</h1>
+            <p>
+                <form action="/logout" method="post">
+                {% csrf_token %}
+                    <input type="submit" value="LogOut" </form>
+            </p>
+        </div>
+        <div id="boxcontent"></div>
+        <div class="box">
+            <h1> Quotable Quotes</h1>
+            <p>
+            </p>
+        </div>
+        <div class="box">
+            <h1>Your Favorites</h1>
+        </div>
+        <div id="qbox"></div>
+        <h1>Contribute a Quote</h1>
+        <p>
+            {% for q in message %}
+            {{q.Quotes}}
+            {%endfor%}
+        </p>
+
+        <form action="/create_q" method="post">
+
+           {% csrf_token %}
+            <label>Quoted by:</label>
+            <input type="text" name"user_post"><br><br>
+
+            <textarea name="html_quotes" id="" cols="80" rows="10"></textarea><br>
+            <input type="submit" value="submit">
+        </form>
+
+    </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form
+    </title>
+</head>
+<body>
+    <fieldset style=" width:350px">
+        <legend>Survey</legend>
+            <form action="/process" method=['POST']>
+                <label>Your Name</label><br>
+                <input type="text" name="first_name"> <br><br><br>
+                <label>Dojo Location</label>
+                <select name="location" id="">
+                    <option value="Chicago">Chicago</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Mountain View">Mountain View</option>
+                    <option value="Seattle">Seattle</option>
+                </select>
+                <br><br><br>
+
+                <label>Favorite Language</label>
+                <select name="language" id="">
+                    <option value="Python">Python</option>
+                    <option value="Ruby">Ruby</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="C#">C#</option>
+                </select><br><br><br>
+                <label>Comments</label><br>
+                <textarea name="commment"  cols="55" rows="10"></textarea>
+
+
+            </form>
+    </fieldset>
+</body>
+</html>

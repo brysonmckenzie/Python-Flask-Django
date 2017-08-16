@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href=" {% static 'login_app/css/style.css' %}">
+</head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+<body>
+    <div class="container-fluid">
+        <section class="container">
+            <div class="container-page">
+                <div class="col-md-6">
+                    <h3 class="dark-grey">Registration</h3>
+                    <form action="register_process" method="post">
+                        {% csrf_token %}
+                        <div class="form-group col-lg-12">
+                            <label>Username</label>
+                            <input type="text" name="html_username" class="form-control" id="" value="">
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <label>Alias</label>
+                            <input type="text" name="html_alias" class="form-control" id="" value="">
+                        </div>
+
+                        <div class="form-group col-lg-6">
+                            <label>Email Address</label>
+                            <input type="email" name="html_email" class="form-control" id="" value="">
+                        </div>
+
+                        <div class="form-group col-lg-6">
+                            <label>Password</label>
+                            <input type="password" name="html_password" class="form-control" id="" value="">
+                        </div>
+
+                        <div class="form-group col-lg-6">
+                            <label>Password Confirmation</label>
+                            <input type="password" name="html_passconf" class="form-control" id="" value="">
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary">Register</button>
+                        <a href="/login">Already a member?</a>
+                    </form>
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

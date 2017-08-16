@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login/Register</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" media="screen" title="indexpage" charset="utf-8">
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Welcome!</h1>
+        <h2>Registration</h2>
+        <form action="/registration_process" method="post">
+            {% csrf_token %}
+            <label>User Name:</label><br>
+            <input type="text" name="html_user_name"><br>
+            <label>Alias:</label><br>
+            <input type="text" name="html_alias"><br>
+            <label>Email:</label><br>
+            <input type="email" name="html_email"><br>
+            <label>Password:</label><br>
+            <input type="password" name="html_password"><br>
+            <label>Password Conformation:</label><br>
+            <input type="password" name="html_pass_conf"><br>
+            <label>Date of Birth:</label><br>
+            <input type="date" name="html_birthday"><br>
+
+            <input type="submit" value="Submit">
+        </form>
+        <h2>Login</h2>
+        <form action="/login_process" method="post">
+            {% csrf_token %}
+            <label>Email:</label><br>
+            <input type="email" name="html_email"><br>
+            <label>Password:</label><br>
+            <input type="password" name="html_password"><br>
+            <input type="hidden" name="html_alias">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+
+
+#wrapper
+{   margin: 0 auto;
+    background-color: midnightblue;
+    width: 960px;
+    height: 1000px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.dropdown-menu{
+    background-color: blue !important;
+}

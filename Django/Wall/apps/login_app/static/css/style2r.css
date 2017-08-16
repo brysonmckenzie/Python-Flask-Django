@@ -1,0 +1,37 @@
+#wrapper{
+background-color: lightcyan;
+width: 960px;
+height:1000px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+margin: 0 auto;
+s
+}
+
+#border{
+background-color: silver;
+padding-top: 5px;
+width:100%;
+
+}
+
+#border p {
+margin-left: 850px;
+margin-bottom: 30px;
+}
+#border h1{
+margin-left: 360px;}
+
+#register_box{
+width: 300px;
+height: 315px;
+background-color: silver;
+border-radius: 10px;
+margin-left: 300px;
+padding-top: 40px;
+}
+#register_forms{
+height:100px;
+height:100px;
+margin-left: 85px;
+/*padding-left: 30px        */
+}

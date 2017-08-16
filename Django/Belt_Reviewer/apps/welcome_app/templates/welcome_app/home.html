@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books Home</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}"media="screen" title="home"  charset="utf-8">
+</head>
+
+<body>
+    <div id="border">
+        <form action="/logout" method="post">
+        {% csrf_token %}
+        <input type="hidden" name"logout">
+        <input type="submit" value="LogOut">
+        </form>
+    </div>
+    <h1>Welcome {{request.session.alias}}</h1>
+
+    
+    <h4><a href="{% url 'book_reviews:logout' %}">Logout</a></h4>
+    <p><a href="{% url 'book_reviews:add_book'%}">Add Book and Review</a></p>
+    
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Picture</title>
+</head>
+<body>
+    <h1>Your random image of the day</h1>
+    <br><br>
+    {% load staticfiles %}
+    
+    {% if picture == 5 %}
+         <img src= "{% static "/images/snow.jpg" %}" alt="snow" />
+    {% elif picture > 10 and picture <= 21 %}
+        <img src="{% static "/images/desert.jpg" %}" alt="desert" />
+    {% elif picture > 20 and picture <= 31 %}
+        <img src="{% static "/images/forest.jpg" %}" alt="forest" />
+    {% elif picture > 30 and picture <= 41 %}
+        <img src="{% static "/images/vineyard.jpg" %}" alt="vineyard" />
+    {% elif picture > 40 and picture <= 51 %}
+        <img src="{% static "/images/tropical.jpg" %}" alt="tropical" />
+    {% endif %}
+</body>
+</html>

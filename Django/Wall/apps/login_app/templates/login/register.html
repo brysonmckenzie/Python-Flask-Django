@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style2r.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="border">
+            <h1 id="title">WALL PAGE</h1>
+        </div>
+        <h1>Registration</h1>
+
+        <div id="register_box">
+            <div id="register_forms">
+                <form action="/registration_process" method="post">
+                    {% csrf_token %}
+                    <label>First Name</label><br>
+                    <input type="text" name="first_name"><br>
+                    <label>Last Name</label><br>
+                    <input type="text" name="last_name"><br>
+                    <label>User Name</label><br>
+                    <input type="text" name="user_name"><br>
+                    <label>Password</label><br>
+                    <input type="password" name="password"><br>
+                    <label>Password Confirmation</label><br>
+                    <input type="password" name="password_confirmation"><br>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wall</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style3w.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="border">
+            <h1>Wall Page</h1>
+            <p>
+                <form action="/logout" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="lo">
+                    <input type="submit" value="Logout">
+                </form>
+            </p>
+
+        </div>
+        <h2>Post Something New</h2>
+        <div id="wallpostbox">
+            <form action="/wall_process" method="post">
+                {% csrf_token %}
+                <textarea name="message"  cols="65" rows="3"></textarea>
+                <input id="blue" type="submit" value="Post">
+            </form>
+        </div>
+        <h1 id="down">Message Feed</h1>
+        <div id="boxcontent">
+            <div id="postmessage">
+            {% for m in post %}
+                <p id='red'>{{m.user.user_name}}:</p>
+                <P id='green'>{{m.message}}</P>
+            {% endfor %}
+            </div>
+
+           
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>

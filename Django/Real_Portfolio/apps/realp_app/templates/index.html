@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Portfolio</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+    <div id='wrapper'>
+        <div id='header'>
+        <h1>Hi, I'm Bryson</h1>
+        <h2>Welcome to My Portfolio</h2>
+        </div>
+        <div class='content'>
+        <a href="/projects">Projects</a></h4>
+        <p>I have a variety of projects bothh personal and contract. They aer built using Python, Swift, and Javascript.</p>
+        </div>
+        <div class='content'>
+        <a href="/about">About Me</a>
+        <p>Alittle about my bacground and why I do what I do.</p>
+        </div>
+        <div class='content'>
+        <a href="/testimonials">Testimonials</a>
+        <p>What my clients and mentors have to say about y projects and work ethic.</p>
+        </div>
+    </div>
+</body>
+</html>

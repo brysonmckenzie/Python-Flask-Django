@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Suprise Me!</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "/css/style.css" %}" media="screen" title="no title" charset="utf-8">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1 id="title">Suprise Me</h1>
+
+
+        <div class="jumbotron">
+
+            <h1 id="title">Pick a Number</h1>
+
+            <p>number of values:&nbsp{{ count }}</p>
+            <form action="/suprise" method="post">
+            {% csrf_token %}
+            <input type="text" name='number'><br> <br>
+            <button class="btn btn-default" type="submit">Ready!</button>
+            </form>
+
+        </div>
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>

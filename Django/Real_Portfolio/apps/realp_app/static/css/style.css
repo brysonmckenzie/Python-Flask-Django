@@ -1,0 +1,37 @@
+#wrapper{
+background-color:silver;
+width: 960px;
+height:1000px;
+font-family: Arial, Helvetica, sans-serif;
+margin: 0 auto;
+padding-left: 20px;
+}
+
+.content{
+display: inline-block;
+width: 250px;
+height: 180px;
+font-size: 18px;
+background-color: red;
+text-align: center;
+vertical-align: top;
+color:silver;
+align
+padding-left:5px;
+padding-top:20px;
+
+}
+/*a:link{
+background-color:black;
+color:white;
+}*/
+.a{
+margin-top: 20px;
+font-size:24px;
+}
+h1{
+margin-right: 20px;
+
+}
+
+

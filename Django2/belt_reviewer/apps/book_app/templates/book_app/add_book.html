@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=A, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Book</title>
+</head>
+
+<body>
+    <h1>Add New Book Title and Review</h1>
+    <fieldset style="width:800px;">
+        <form action="/add_book_process" method="post">
+        {% csrf_token %}
+            <label>Book Title</label>
+            <input type="text" name="book_title"><br>
+            <label>Choose Author from the list:</label>
+            <select name="author">
+                <option default value="Choose an Author">Alex Haley</option>
+                {% for author in authors %}
+                <option value="{{author.id}}">{{author.name}}</option>
+                {% endfor %}
+            </select><br>
+            <label>Or add a new author:</label>         
+            <input type="text" name="add_author"><br>
+            <label>Review:</label><br>
+            <textarea name="book_review" id="" cols="100" rows="10"></textarea>
+            <br>
+            <br>
+            <label>Rating</label>
+            <select name="rating" id="">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <br><br>
+            <button>Add Book and Review</button>
+        </form>
+
+    </fieldset>
+</body>
+
+</html>

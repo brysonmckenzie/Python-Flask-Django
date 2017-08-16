@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja What</title>
+</head>
+<body>
+
+    {% if color == 'blue' %}
+        {% load static %} <img src="{% static "ninja_app/images/leonardo.jpg" %}" alt="leonardo" />
+    {% elif color == 'red' %}
+        {% load static %} <img src="{% static "ninja_app/images/raphael.jpg" %}" alt="raphael" />
+    {% elif color == 'orange' %}
+        {% load static %} <img src="{% static "ninja_app/images/michelangelo.jpg" %}" alt="michelangelo" />
+    {% elif color == 'purple' %}
+        {% load static %} <img src="{% static "ninja_app/images/donatello.jpg" %}" alt="donatello" />
+    {% else %}
+        {% load static %} <img src="{% static "ninja_app/images/notapril.jpg" %}" alt="notapril" />
+    {% endif %}
+
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wall Register</title>
+</head>
+<body>
+        <h1>Registration</h1>
+            <form action="register_process" method="post">{% csrf_token %}
+                <label>First Name</label><br>
+                <input type="text" name="html_firstName" placeholder="First name"><br>
+                <label>Last Name</label><br>
+                <input type="text" name="html_lastName" placeholder="Last name"><br>
+                <label>Email </label><br>
+                <input type="email" name="html_email" placeholder="Email"><br>
+                <label>Password</label><br>
+                <input type="text" name="html_password" placeholder="Password"><br>
+                <label>Password Conformation</label><br>
+                <input type="text" name="html_passconf" placeholder="Confirm Password"><br><br>
+                <input type="submit" vaule="Submit">
+            </form><br><br>
+    <a href="/login">Member?</a>
+
+    </body>
+</html>

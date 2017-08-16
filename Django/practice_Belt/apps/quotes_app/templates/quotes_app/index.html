@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login/Registration</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'quotes_app/css/style.css' %}">
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Welcome!</h1>
+
+        <form action="/registration_process" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Registration</legend>
+                <label>First Name:</label><br>
+                <input type="text" name="html_firstname"><br>
+                <label>Last Name:</label><br>
+                <input type="text" name="html_lastname"><br>
+                <label>Alias:</label><br>
+                <input type="text" name="html_alias"><br>
+                <label>Email:</label><br>
+                <input type="email" name="html_email"><br>
+                <label>Password:</label><br>
+                <input type="password" name="html_password"><br>
+                <label>Password Confirmation:</label><br>
+                <input type="password" name="html_pass_conf"><br>
+                <label>Birthday:</label><br>
+                <input type="date" name="html_birthday"><br>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+        {% csrf_token %}
+        <form action="/login_process" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Login</legend>
+                <label>Email:</label><br>
+                <input type="email" name="html_email"><br>
+                <label>Password:</label><br>
+                <input type="password" name="html_password"><br>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+</body>
+</div>
+
+</html>

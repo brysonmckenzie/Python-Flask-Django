@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="border">
+            <h1>Ninja Gold</h1>
+            <h2 id="chinese">忍者黄金</h2>
+        </div>
+        <div id="goldcount">
+            <h1>Your Gold: {{request.session.gold}}</h1>
+            <div id="clearbox">
+                <form action="/clear" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="clear">
+                    <input type="submit" value="RESET">
+                </form>
+            </div>
+        </div>
+        <div id="boxcontent">
+            <div class="sub_box">
+                <div class="box">
+                    <h3>Farm</h3>
+                    <p>(earns 10-20 golds)</p>
+                </div>
+                <div class="box2">
+                    <form action="/process_money" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="info" value="farm">
+                        <input type="submit" value="Find Gold">
+                    </form>
+                </div>
+            </div>
+
+            <div class="sub_box">
+                <div class="box">
+                    <h3>Cave</h3>
+                    <p>(earns 5-10 golds)</p>
+                </div>
+                <div class="box2">
+                    <form action="/process_money" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="info" value="cave">
+                        <input type="submit" value="Find Gold">
+                    </form>
+                </div>
+            </div>
+            <div class="sub_box">
+                <div class="box">
+                    <h3>House</h3>
+                    <p>(earns 2-5 golds)</p>
+                </div>
+                <div class="box2">
+                    <form action="/process_money" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="info" value="house">
+                        <input type="submit" value="Find Gold">
+                    </form>
+                </div>
+            </div>
+            <div class="sub_box">
+                <div class="box">
+                    <h3>Casino</h3>
+                    <p>(earns/takes 0 - 50 golds)</p>
+                </div>
+                <div class="box2">
+                    <form action="/process_money" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="info" value="casino">
+                        <input type="submit" value="Find Gold">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="activities">
+            {% for log in request.session.log %}
+            <p>{{log}}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>

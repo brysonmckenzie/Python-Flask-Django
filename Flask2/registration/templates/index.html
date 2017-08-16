@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+    <body>
+        <div id ="header"><h1>Dojo Survey</h1></div> <br>
+        <fieldset style='width: 350px;height:350px;background-color:Gray';>
+                <legend></legend>
+                    <form action="/process" method="post">
+                        <label>First Name:</label>&nbsp <br>
+                        <input type="text" name="first_name"><br> 
+                        <label>Last Name:</label>&nbsp <br>
+                        <input type="text" name="last_name"><br>  
+                        <label>Email:</label>&nbsp <br>
+                        <input type="email" name="email"><br>  
+                        <label>Password:</label>&nbsp<br>
+                        <input type="password" name="password"><br>  
+                        <label>Password Confirmation:</label>&nbsp<br>
+                        <input type="password" name="password_confirmation"><br><br> 
+                        <button>Submit</button>
+                    </form><br>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p style = "color: red;"> {{ message }} </p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+            </fieldset>
+        
+    </body>
+</html>
